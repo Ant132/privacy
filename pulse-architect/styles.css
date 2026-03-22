@@ -1,0 +1,218 @@
+/**
+ * Pulse Architect - Legal/Support Pages Styles
+ * Matches the "digital zen architecture" visual theme from the game.
+ *
+ * Design principles:
+ * - Deep space blue-black background
+ * - Soft blue accents with subtle glow effects
+ * - Clean, minimal typography
+ * - Muted, cohesive colors
+ */
+
+:root {
+  /* Background */
+  --background: #0d1117;
+  --background-alt: #161b22;
+
+  /* Primary accent - cyan/teal energy */
+  --primary: #58a6ff;
+  --primary-bright: #79c0ff;
+  --primary-dim: #388bfd;
+
+  /* Text */
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+
+  /* Borders & subtle elements */
+  --border: #30363d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--background);
+  min-height: 100vh;
+}
+
+/* Subtle background gradient for depth */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(88, 166, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Navigation */
+nav {
+  margin: 0 0 32px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--primary-bright);
+  text-shadow: 0 0 12px rgba(88, 166, 255, 0.5);
+}
+
+/* Headings */
+h1, h2, h3 {
+  line-height: 1.25;
+  color: var(--text);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--text) 0%, var(--primary-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  color: var(--primary-bright);
+}
+
+/* Paragraphs and lists */
+p {
+  margin: 16px 0;
+  color: var(--text-dim);
+}
+
+ul {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+li {
+  margin: 8px 0;
+  color: var(--text-dim);
+}
+
+/* Links in content */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-bright);
+  text-decoration: underline;
+}
+
+/* Small text */
+.small {
+  color: var(--text-dim);
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Cards / highlighted sections */
+.card {
+  background: var(--background-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* Form elements (for support/contact pages) */
+input, textarea, button {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+input, textarea {
+  background: var(--background-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: var(--text);
+  width: 100%;
+  margin: 8px 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+}
+
+button {
+  background: var(--primary);
+  color: var(--background);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  background: var(--primary-bright);
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+}
+
+/* Footer */
+footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 24px 16px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    gap: 6px 14px;
+  }
+}
